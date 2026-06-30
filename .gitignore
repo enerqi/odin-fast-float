@@ -1,0 +1,29 @@
+.env*
+*.exe
+*.pdb
+*.rdbg
+*.obj
+*.bc
+*.ll
+*.sublime-workspace
+*.lib
+*.exp
+*.sqlite
+*.suo
+*node_modules
+
+# profile data
+**.spall
+
+# Our project outputs artifacts to target/**. A build dir is another common custom directory for artifacts.
+build
+target
+
+.codegraph
+.claude
+.agents
+
+# The prebuilt fast_float static libraries are shipped with the bindings, so keep
+# them tracked despite the *.lib ignore above (and any *.a).
+!lib/*.lib
+!lib/*.a
