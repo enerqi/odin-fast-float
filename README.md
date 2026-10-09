@@ -1,5 +1,12 @@
 # odin-fast-float
 
+> [!WARNING]
+> **Archived / deprecated.** Recent Odin releases implement their own fast_float-style parser
+> inside `core:strconv`, so these bindings are no longer needed. Use `core:strconv` directly.
+> This repository is read-only and kept for reference only; no further updates or fixes. The
+> `strconv` comparisons and benchmark numbers below were measured against the older `core:strconv`
+> and do not reflect current Odin.
+
 [Odin](https://odin-lang.org/) bindings to [**fast_float**](https://github.com/fastfloat/fast_float),
 Daniel Lemire's exact, high-throughput number parser, via the single-header C port
 [`ffc.h`](https://github.com/kolemannix/ffc.h).
@@ -125,7 +132,8 @@ just bench                                    # 1,000,000 iterations/case, -o:sp
 just bench -- -define:COUNT_ITERATIONS=5000000
 ```
 
-Parsing throughput, ns/call (Windows x86-64, representative — your numbers will differ):
+Parsing throughput, ns/call (Windows x86-64, representative — your numbers will differ). Measured
+against the pre-fast_float `core:strconv`; see the archive notice at the top:
 
 | input                          | `strconv` | fast_float |
 |--------------------------------|----------:|-----------:|
